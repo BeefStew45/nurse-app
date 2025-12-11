@@ -70,15 +70,15 @@ if (row.result_json && row.result_json.predictions) {
 const div = document.createElement('div');
 div.className = 'field';
 
-// COLOR / BACKGROUND SYSTEM
+// === COLOR / BACKGROUND SYSTEM ===
 
-// ONE detection -> solid color
+// ONE detection → solid color
 if (detected.length === 1) {
   const color = colorMap[detected[0]];
   document.body.style.background = color;
 }
 
-// MULTIPLE detections -> multi color checker grid
+// MULTIPLE detections → multi-color checker grid
 else if (detected.length > 1) {
   const colors = detected.map(d => colorMap[d]);
   const size = 60; // pixel size of squares
@@ -94,7 +94,7 @@ else if (detected.length > 1) {
     gradientStops += `${color} ${start}%, ${color} ${end}%, `;
   });
 
-  gradientStops = gradientStops.slice(0, -2);
+  gradientStops = gradientStops.slice(0, -2); // remove last comma
 
   document.body.style.background = `
     repeating-linear-gradient(
