@@ -21,7 +21,7 @@ async function fetchLatest() {
 
   try {
     // <-- Replace with your Vercel proxy URL
-    const response = await fetch('https://supabase-proxy-fjb9x1rex-roboticsitedressing-6360s-projects.vercel.app/api/latest');
+    const response = await fetch('https://supabase-proxys-obdlvqzrm-roboticsitedressing-6360s-projects.vercel.app/api/latest');
     const data = await response.json();
 
     if (!data || data.length === 0) {
@@ -97,4 +97,5 @@ fetchLatest();
 </script>
 </body>
 </html>
+
 
